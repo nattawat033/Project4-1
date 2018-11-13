@@ -6,6 +6,7 @@
 						<li><a href="profile.php">Profile</a></li>
 						<li><a href="profession.php">Profession</a></li>
 						<li><a href="expertise.php">Expertise</a></li>
+						<li><a href="education.php">Education</a></li>
 						<li><a href="register.php" class="button special">Sign Up</a></li>
 					</ul>
 				</nav>
