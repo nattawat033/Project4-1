@@ -20,7 +20,7 @@
 	<body id="top">
 
 		<!-- Header -->
-		<?php include "header.php"; ?>
+		<?php include "headerout.php"; ?>
 
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
@@ -33,18 +33,33 @@
   <?php include "connectDB.php";
 
    mysqli_set_charset($conn,"utf8");
-	
-   $sql = "SELECT * FROM professional  ";
+   $sql = 'SELECT * FROM professional  WHERE  AP_ID  = '.$_SESSION['user_id'].' ';
+
+ 
 
    $query = mysqli_query($conn,$sql);
    $numrows = mysqli_num_rows($query);
    $numfields = mysqli_num_fields($query);
 
-?>  
+   if (!$result) {
+    echo '<b>Error</b>'.mysqli_error().'<br>';
+  } elseif ($numrows==0) {
+   ?>
+    <div align="center">
+    <table  width="200" border="0">
+      <tr>
+        <td>
+      <div align="center"><form id="form7" name="form7" method="post" action="insert_ex1.php">
+          <input type="submit" name="submit" id="submit" value="เพิ่มข้อมูล" />
+        </form></td>
+      </div>
+  <?php
+  }else 
 
-<?php
+
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
+
 ?>
 <div align="center">
   <table width="500" border="0">
@@ -81,20 +96,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
         <th><div align="center">ด้านอื่นๆ	:</div></th>
       <td><div align="left"><?php echo $result["Prof_other"];?></div></td></tr>
 
-      
-    
-  <?php
-}
-?>
-  </table></div>
-  <?php
-mysqli_close($conn);
-?>
-</div>
- </fieldset>
-      
-      
-     <div align="center">
+          <div align="center">
   <table  width="200" border="0">
     <tr>
       <td>
@@ -110,6 +112,19 @@ mysqli_close($conn);
     </tr>
   </table>
 </div>
+    
+  <?php
+}
+?>
+  </table></div>
+  <?php
+mysqli_close($conn);
+?>
+</div>
+ </fieldset>
+      
+      
+ 
 			</section>
 
 		<!-- Footer -->

@@ -19,7 +19,7 @@
 	<body id="top">
 
 		<!-- Header -->
-		<?php include "header.php"; ?>
+		<?php include "headerout.php"; ?>
 
 
 		<!-- Main -->
@@ -30,7 +30,9 @@
 
           <?php
 $connect = mysqli_connect("localhost","root","","testp");
-$sql = "select * from job";
+mysqli_set_charset($connect,"utf8");
+$sql = 'SELECT * FROM job  WHERE  AP_ID  = '.$_SESSION['user_id'].' ';
+
 
 $result = mysqli_query($connect,$sql);
 if (!$result) {

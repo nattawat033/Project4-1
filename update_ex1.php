@@ -19,7 +19,7 @@
 	<body id="top">
 
 		<!-- Header -->
-		<?php include "header.php"; ?>
+		<?php include "headerout.php"; ?>
 
 
 		<!-- Main -->
@@ -30,6 +30,7 @@
 
           <?php
 $connect = mysqli_connect("localhost","root","","testp");
+mysqli_set_charset($connect,"utf8");
 $sql = "select  AP_ID,Prof_quality,Prof_personal,Prof_plan,Prof_language,Prof_computer,
 					  Prof_experience,Prof_creation,Prof_other   from professional";
 

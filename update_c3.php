@@ -11,6 +11,7 @@ $tell = $_POST['tell'];
 $fax = $_POST['fax'];
 
 $connect = mysqli_connect("localhost","root","","testp");
+mysqli_set_charset($connect,"utf8");
 
 $sql = " update job set job_name = '$name' , 
 						job_position = '$position' ,

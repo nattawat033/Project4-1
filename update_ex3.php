@@ -12,7 +12,7 @@ $other = $_POST['other'];
 
 
 $connect = mysqli_connect("localhost","root","","testp");
-
+mysqli_set_charset($connect,"utf8");
 $sql = " update professional set Prof_quality = '$quality' , 
 						Prof_personal = '$personal' ,
 						Prof_plan = '$plan' ,

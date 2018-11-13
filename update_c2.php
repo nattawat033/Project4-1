@@ -19,7 +19,7 @@
 	<body id="top">
 
 		<!-- Header -->
-        <?php include "header.php"; ?>
+        <?php include "headerout.php"; ?>
 
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
@@ -31,9 +31,12 @@
 $test = $_POST['pid'];
 
 $connect = mysqli_connect("localhost","root","","testp");
+
+
+
 $sql = "SELECT * from job where AP_ID= $test";
 //$sql = "SELECT * from alumni_profile where AP_ID= 1";
-
+mysqli_set_charset($connect, "utf8");
 $result = mysqli_query($connect,$sql);
 $row = mysqli_fetch_assoc ($result) ;
 

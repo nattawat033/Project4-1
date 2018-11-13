@@ -19,16 +19,21 @@
 	<body id="top">
 
 		<!-- Header -->
-		<?php include "header.php"; ?>
+		<?php include "headerout.php"; ?>
 
 
 		<!-- Main -->
       <section id="main" class="wrapper style1">
 				<header class="major">
 					<h2>Profile</h2>
-	<?php
+
+<?php  
+
 $connect = mysqli_connect("localhost","root","","testp");
-$sql = "select AP_ID,AP_name,AP_nickname,AP_address,AP_district,AP_citty,AP_addcode,AP_tell,AP_lineID,AP_facebook,AP_email from alumni_profile";
+mysqli_set_charset($connect, "utf8");
+ 
+
+$sql = 'SELECT AP_ID,AP_name,AP_nickname,AP_address,AP_district,AP_citty,AP_addcode,AP_tell,AP_lineID,AP_facebook,AP_email from alumni_profile WHERE AP_ID  = '.$_SESSION['user_id'].'';
 
 $result = mysqli_query($connect,$sql);
 if (!$result) {

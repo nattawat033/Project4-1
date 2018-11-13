@@ -19,7 +19,7 @@
 	<body id="top">
 
 		<!-- Header -->
-		<?php include "header.php"; ?>
+    <?php include "headerout.php"; ?>
 
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
@@ -28,16 +28,24 @@
 					
 					<fieldset class="common-form standard-form">
 <div align="right">
-  <?php include "connectDB.php";
+
+
+  <?php  
+
+
+$connect = mysqli_connect("localhost","root","","testp");
+mysqli_set_charset($connect, "utf8");
 
    
+// $connect = mysqli_connect("localhost","root","","testp");
 
-  
-   mysqli_set_charset($conn,"utf8");
+// mysqli_set_charset($connect,"utf8");
+
 	
-   $sql = "SELECT * FROM alumni_profile  ";
+   $sql = 'SELECT * FROM alumni_profile  WHERE  AP_ID  = '.$_SESSION['user_id'].' ';
+ 
 
-   $query = mysqli_query($conn,$sql);
+   $query = mysqli_query($connect,$sql);
    $numrows = mysqli_num_rows($query);
    $numfields = mysqli_num_fields($query);
 
@@ -96,7 +104,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 ?>
   </table>
   <?php
-mysqli_close($conn);
+mysqli_close($connect);
 ?>
 </div>
  </fieldset>

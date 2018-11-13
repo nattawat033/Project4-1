@@ -19,7 +19,7 @@
 	<body id="top">
 
 		<!-- Header -->
-        <?php include "header.php"; ?>
+        <?php include "headerout.php"; ?>
 
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
@@ -31,6 +31,7 @@
 $test = $_POST['pid'];
 
 $connect = mysqli_connect("localhost","root","","testp");
+mysqli_set_charset($connect,"utf8");
 $sql = "select AP_ID,Prof_quality,Prof_personal,Prof_plan,Prof_language,Prof_computer,
 					  Prof_experience,Prof_creation,Prof_other   from professional where AP_ID= $test";
 //$sql = "SELECT * from alumni_profile where AP_ID= 1";

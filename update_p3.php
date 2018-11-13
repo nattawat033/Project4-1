@@ -13,6 +13,7 @@ $face = $_POST['face'];
 $email = $_POST['email'];
 
 $connect = mysqli_connect("localhost","root","","testp");
+mysqli_set_charset($connect,"utf8");
 
 $sql = " update alumni_profile set AP_name = '$name' , 
 									AP_nickname = '$nickname' ,

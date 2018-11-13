@@ -21,8 +21,10 @@ if ($conn->connect_error) {
 
  <?php
 //connect to mysql database
-$conn = mysqli_connect("localhost", "root", "", "testp") or die("Error " . mysqli_error($conn));
 
+$conn = mysqli_connect("localhost", "root", "", "testp") or die("Error " . mysqli_error($conn));
+mysqli_set_charset($connect,"utf8");
+ 
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
