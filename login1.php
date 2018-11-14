@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 require_once("libraries/nusoap.php");   // ------------------------------------ Class 㹡�����¡�� ����ͧ任�Ѻ������ ------------------------------
 $proxyhost = '';$proxyport ='';

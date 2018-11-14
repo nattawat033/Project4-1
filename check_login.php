@@ -6,6 +6,7 @@
 	$dbName = "testp";
 
 	$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
+	mysqli_set_charset($objCon, "utf8");
 
 	$strSQL = "SELECT * FROM alumni_profile WHERE AP_username = '".mysqli_real_escape_string($objCon,$_POST['txtUserId'])."' 
 	and AP_password = '".mysqli_real_escape_string($objCon,$_POST['txtPassword'])."'";
@@ -23,9 +24,13 @@
 	}
 	else
 	{
-	
-	$_SESSION['user_id'] = $row['AP_ID'];
 
+ 
+		
+		$_SESSION['user_id'] = $row['AP_ID'];
+		$_SESSION['user_name'] = $row['AP_name'];
+
+	
 	//echo  $row["AP_ID"];
       header("location:home.php");
 	}

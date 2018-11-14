@@ -55,8 +55,8 @@ mysqli_set_charset($connect, "utf8");
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
 ?>
-
-  <table  width="500" border="0" >
+ <div  align= "center" >
+  <table  width="500" border="0"  style="width: 800px" >
    
       <tr width="80">
         <th> <div align="right">ชื่อ - สกุล :</div></th>
@@ -102,6 +102,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
   <?php
 }
 ?>
+</div>
   </table>
   <?php
 mysqli_close($connect);

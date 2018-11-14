@@ -1,6 +1,11 @@
-<?php   
-session_start(); //to ensure you are using same session
-session_destroy(); //destroy the session
-header("Location: index.php"); //to redirect back to "index.php" after logging out
-exit();
+<?php
+session_start();
+if(isset($_SESSION['user_id'])) {
+	session_destroy();
+	unset($_SESSION['user_id']);
+	unset($_SESSION['user_name']);
+	header("Location: index.php");
+} else {
+	header("Location: index.php");
+}
 ?>

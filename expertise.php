@@ -20,7 +20,8 @@
 	<body id="top">
 
 		<!-- Header -->
-		<?php include "headerout.php"; ?>
+		<?php include "headerout.php"; 
+    ?>
 
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
@@ -33,38 +34,23 @@
   <?php include "connectDB.php";
 
    mysqli_set_charset($conn,"utf8");
+	
    $sql = 'SELECT * FROM professional  WHERE  AP_ID  = '.$_SESSION['user_id'].' ';
-
- 
 
    $query = mysqli_query($conn,$sql);
    $numrows = mysqli_num_rows($query);
    $numfields = mysqli_num_fields($query);
 
-   if (!$result) {
-    echo '<b>Error</b>'.mysqli_error().'<br>';
-  } elseif ($numrows==0) {
-   ?>
-    <div align="center">
-    <table  width="200" border="0">
-      <tr>
-        <td>
-      <div align="center"><form id="form7" name="form7" method="post" action="insert_ex1.php">
-          <input type="submit" name="submit" id="submit" value="เพิ่มข้อมูล" />
-        </form></td>
-      </div>
-  <?php
-  }else 
+?>  
 
-
+<?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
-
 ?>
 <div align="center">
-  <table width="500" border="0">
+  <table width="500" border="0" style="width: 800px">
   
-      <tr width="80">
+      <tr width="80" >
         <th> <div align="center">ด้านระบบคุณภาพ:</div></th>
       <td><div align="left"><?php echo $result["Prof_quality"];?></div></td></tr>
       
@@ -96,22 +82,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
         <th><div align="center">ด้านอื่นๆ	:</div></th>
       <td><div align="left"><?php echo $result["Prof_other"];?></div></td></tr>
 
-          <div align="center">
-  <table  width="200" border="0">
-    <tr>
-      <td>
-	  <div align="right"><form id="form7" name="form7" method="post" action="update_ex1.php">
-        <input type="submit" name="submit" id="submit" value="แก้ไข" />
-      </form></td>
-	</div>
-
-      <td> <div align="left"><form id="form8" name="form8" method="post" action="">
-        <input type="submit" name="Submit" id="button" value="กลับ" />
-      </form></td>
-	  </div>
-    </tr>
-  </table>
-</div>
+      
     
   <?php
 }
@@ -124,7 +95,30 @@ mysqli_close($conn);
  </fieldset>
       
       
- 
+     <div align="center">
+  <table  width="50" border="0" style="width: 800px">
+    <tr>
+      <td>
+	  <div align="center"><form id="form7" name="form7" method="post" action="update_ex1.php">
+        <input type="submit" name="submit" id="submit" value="แก้ไข" />
+      </form></td>
+	</div>
+
+      <td> <div align="center"><form id="form8" name="form8" method="post" action="">
+        <input type="submit" name="Submit" id="button" value="กลับ" />
+      </form></td>
+	  </div>
+
+      <td>
+	  <div align="center"><form id="form7" name="form7" method="post" action="Insert_ex1.php">
+        <input type="submit" name="submit" id="submit" value="เพิ่มข้อมูล" />
+      </form></td>
+	</div>
+
+
+    </tr>
+  </table>
+</div>
 			</section>
 
 		<!-- Footer -->

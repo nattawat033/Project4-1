@@ -1,37 +1,11 @@
-  
 <?php
-$connect = mysqli_connect("localhost","root","","testp");
-mysqli_set_charset($connect, "utf8");
-	  if (!isset($smtUpdate)) {
-		  $sql = 'SELECT * FROM  alumni_profile  ';
-		  
-		  $result = mysqli_query($connect,$sql);
-		  $numrows = mysqli_num_rows($result);
-		  $numfields = mysqli_num_fields($result);
-		  $path = 'images/';   // Path สำหรับเชื่อมไปยังที่เก็บไฟล์รูป
-		  
-	  if (!$result) {
-		  echo '<b>Error</b>'.mysqli_error().'<br>';
-	  } elseif ($numrows==0) {
-		  echo '<b>Query executed successfully but no row returns!</b>';
-	  }else { 
-		  while ($row = mysqli_fetch_array($result)) {
-			session_start();
-			$_SESSION['user_id'] = $row['AP_ID'];
-			$_SESSION['user_name'] = $row['AP_name'];
-	 
-		  echo ''	
-		  
-		  ;
-		  }
-		}
-	}
-		
+  include_once 'connectDB.php';
+  session_start();
 
-?>  
+?>
 
 <header id="header" class="skel-layers-fixed">
-				<h1><a href="#">ALUMNI SYSTEM</a></h1>
+				<h1><a href="home.php">ALUMNI SYSTEM</a></h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="home.php">Home</a></li>

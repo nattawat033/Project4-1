@@ -26,7 +26,7 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					
+
 					<p><h2>WELLCOME TO</h2></p>
 					<h2>Alumni System</h2>
 					

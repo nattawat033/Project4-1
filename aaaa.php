@@ -121,7 +121,8 @@ mysqli_set_charset($connect, "utf8");
 
 
             //  insert  
-              if(mysqli_query($con, "INSERT INTO ชื่อตาราง(firstname,lastname,phone,email,password) VALUES('" . $firstname . "','" . $lastname . "','" . $phone . "', '" . $email . "', '" . md5($password) . "')")) {
+              if(mysqli_query($con, "INSERT INTO ชื่อตาราง(firstname,lastname,phone,email,password) 
+              VALUES('" . $firstname . "','" . $lastname . "','" . $phone . "', '" . $email . "', '" . md5($password) . "')")) {
                 
                  //  แจ้งเตือนสำเร็จ
                  '<script language="javascript" type="text/javascript"> 

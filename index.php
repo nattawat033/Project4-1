@@ -20,7 +20,8 @@
 
 		<!-- Header -->
 
-		<?php include "headerlog.php"; ?>
+		<?php include "headerlog.php";           session_start();
+?>
 
 
 		<!-- Banner -->

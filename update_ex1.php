@@ -31,8 +31,8 @@
           <?php
 $connect = mysqli_connect("localhost","root","","testp");
 mysqli_set_charset($connect,"utf8");
-$sql = "select  AP_ID,Prof_quality,Prof_personal,Prof_plan,Prof_language,Prof_computer,
-					  Prof_experience,Prof_creation,Prof_other   from professional";
+$sql = 'SELECT  AP_ID,Prof_quality,Prof_personal,Prof_plan,Prof_language,Prof_computer,
+					  Prof_experience,Prof_creation,Prof_other   FROM professional  WHERE AP_ID  = '.$_SESSION['user_id'].'';
 
 $result = mysqli_query($connect,$sql);
 if (!$result) {
