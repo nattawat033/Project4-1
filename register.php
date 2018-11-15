@@ -30,7 +30,7 @@
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #999999;">
-	
+	<form action="insert_AP1.php" method=”post”>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="login100-more" style="background-image: url('images/1phuket.jpg');"></div>
@@ -47,9 +47,15 @@
 						<span class="focus-input100"></span>
 					</div>
 
+					<div class="wrap-input100 validate-input" data-validate = "Nickname is required ">
+						<span class="label-input100">Nickname</span>
+						<input class="input100" type="text" name="nickname" placeholder="Nickname...">
+						<span class="focus-input100"></span>
+					</div>
+
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Email addess...">
+						<input class="input100" type="text" name="email" placeholder="EX. aaaa@hotmail.com">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -61,31 +67,17 @@
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="text" name="pass" placeholder="*************">
+						<input class="input100" type="password" name="pass" placeholder="*************">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
-						<span class="label-input100">Repeat Password</span>
-						<input class="input100" type="text" name="repeat-pass" placeholder="*************">
+					<div class="wrap-input100 validate-input" data-validate = "Valid IDcard is required: 19xxxxxxxxxxx">
+						<span class="label-input100">ID Card</span>
+						<input class="input100" type="text" name="IdCard" placeholder="19xxxxxxxxxxx">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="flex-m w-full p-b-33">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								<span class="txt1">
-									I agree to the
-									<a href="#" class="txt2 hov1">
-										Terms of User
-									</a>
-								</span>
-							</label>
-						</div>
-
-						
-					</div>
+					
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">

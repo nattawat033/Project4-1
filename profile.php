@@ -123,7 +123,7 @@ mysqli_close($connect);
 
       <td>
 	  <div align="left">
-	  <form id="form8" name="form8" method="post" action="">
+	  <form id="form8" name="form8" method="post" action="home.php">
         <input type="submit" name="Submit" id="button" value="กลับ" />
       </form></td>
 	  </div>

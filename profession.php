@@ -100,7 +100,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
       </form></td>
 	  </div>
 
-      <td><div align="left"><form id="form8" name="form8" method="post" action="">
+      <td><div align="left"><form id="form8" name="form8" method="post" action="home.php">
         <input type="submit" name="Submit" id="button" value="กลับ" />
       </form></td>
 	  </div>

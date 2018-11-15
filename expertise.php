@@ -83,6 +83,9 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
       <td><div align="left"><?php echo $result["Prof_other"];?></div></td></tr>
 
       
+
+      
+      
     
   <?php
 }
@@ -104,7 +107,7 @@ mysqli_close($conn);
       </form></td>
 	</div>
 
-      <td> <div align="center"><form id="form8" name="form8" method="post" action="">
+      <td> <div align="center"><form id="form8" name="form8" method="post" action="home.php">
         <input type="submit" name="Submit" id="button" value="กลับ" />
       </form></td>
 	  </div>
