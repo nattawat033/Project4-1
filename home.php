@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
+	<style type="text/css">
+	h2.a {text-shadow: 0.1em 0.1em 0.05em #33c0ca}
+	</style>
+
+
 		<title>Alumni System</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -16,7 +22,7 @@
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
 	</head>
-	<body id="top">
+	<body id="top" >
 
 		<!-- Header -->
 
@@ -25,10 +31,10 @@
 
 		<!-- Banner -->
 			<section id="banner">
-				<div class="inner">
+				<div class="inner" >
 
-					<p><h2>WELLCOME TO</h2></p>
-					<h2>Alumni System</h2>
+					<p ><h2 class = "a">WELCOME TO</h2></p>
+					<h2 class = "a">Alumni System</h2>
 					
 				</div>
 			</section>
@@ -68,6 +74,11 @@
 						</div>
 					</div>
 				</div>
+				<div align="center" >
+				<ul class="actions">
+									<li><a href="news.php" class="button alt">ข่าวประชาสัมพันธ์เพิ่มเติม</a></li>
+								</ul>
+				</div>
 			</section>
 
 		<!-- Three -->
@@ -95,6 +106,8 @@
 							<hr>
 							
 						</div>
+
+						
 			</section>			
 			
 		<!-- Footer -->

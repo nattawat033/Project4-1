@@ -55,13 +55,21 @@ mysqli_set_charset($connect, "utf8");
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
 ?>
+<img src="" alt="">
+
  <div  align= "center" >
   <table  width="500" border="0"  style="width: 800px" >
    
       <tr width="80">
         <th> <div align="right">ชื่อ - สกุล :</div></th>
-      <td><div align="left"><?php echo $result["AP_name"];?></div></td></tr>
-      
+      <td><div align="left"><?php echo $result["AP_name"];?> &nbsp <?php echo $result["AP_Lname"];?></div></td></tr>
+
+      <tr width="80">
+        <th> <div align="right">รูปประจำตัว :</div></th>
+      <td><img src="up_pro/<?php echo $result["img_pro"];?>" width="200px" height = "200px"></div></td></tr>
+
+
+
       <tr width="80">
         <th> <div align="right">ชื่อเล่น :</div></th>
       <td><div align="left"><?php echo $result["AP_nickname"];?></div></td></tr>
@@ -111,8 +119,8 @@ mysqli_close($connect);
  </fieldset>
 
 
-
-  <table  width="200" border="0">
+<div align="center">
+  <table  width="200" border="0" style="width: 800px">
     <tr>
       <td>
 	  <div align="right">

@@ -44,7 +44,7 @@
 ?>  
 
 <?php
-while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
+if($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
 ?>
 <div align="center">
@@ -82,23 +82,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
         <th><div align="center">ด้านอื่นๆ	:</div></th>
       <td><div align="left"><?php echo $result["Prof_other"];?></div></td></tr>
 
-      
-
-      
-      
-    
-  <?php
-}
-?>
-  </table></div>
-  <?php
-mysqli_close($conn);
-?>
-</div>
- </fieldset>
-      
-      
-     <div align="center">
+       <div align="center">
   <table  width="50" border="0" style="width: 800px">
     <tr>
       <td>
@@ -112,6 +96,30 @@ mysqli_close($conn);
       </form></td>
 	  </div>
 
+
+    </tr>
+  </table>
+</div>
+
+      
+      
+    
+  <?php
+} else { 
+?>
+  </table></div>
+  <?php
+mysqli_close($conn);
+?>
+</div>
+ </fieldset>
+      
+      
+     <div align="center">
+  <table  width="50" border="0" style="width: 800px">
+    <tr>
+     
+
       <td>
 	  <div align="center"><form id="form7" name="form7" method="post" action="Insert_ex1.php">
         <input type="submit" name="submit" id="submit" value="เพิ่มข้อมูล" />
@@ -122,6 +130,8 @@ mysqli_close($conn);
     </tr>
   </table>
 </div>
+<?php }
+?>  
 			</section>
 
 		<!-- Footer -->

@@ -33,7 +33,7 @@ $connect = mysqli_connect("localhost","root","","testp");
 mysqli_set_charset($connect, "utf8");
  
 
-$sql = 'SELECT AP_ID,AP_name,AP_nickname,AP_address,AP_district,AP_citty,AP_addcode,AP_tell,AP_lineID,AP_facebook,AP_email from alumni_profile WHERE AP_ID  = '.$_SESSION['user_id'].'';
+$sql = 'SELECT AP_ID,AP_name,AP_nickname,img_pro,AP_address,AP_district,AP_citty,AP_addcode,AP_tell,AP_lineID,AP_facebook,AP_email from alumni_profile WHERE AP_ID  = '.$_SESSION['user_id'].'';
 
 $result = mysqli_query($connect,$sql);
 if (!$result) {
@@ -42,11 +42,12 @@ if (!$result) {
 }
 else{
 echo '<table border = "3" cellpading = "0"  align = "center">';
-    echo '<tr>';
+  echo '<tr>';
 	echo '<td>ID	</td>';
-    echo '<td>ชื่อ	</td>';
-    echo '<td>ชื่อเล่น	</td>';
-    echo '<td>ที่อยู่	</td>';
+  echo '<td>ชื่อ	</td>';
+	echo '<td>ชื่อเล่น	</td>';
+	echo '<td>รูปภาพ	</td>';
+  echo '<td>ที่อยู่	</td>';
 	echo '<td>อำเภอ	</td>';
 	echo '<td>จังหวัด	</td>';
 	echo '<td>รหัสไปรษณี	</td>';
@@ -54,7 +55,6 @@ echo '<table border = "3" cellpading = "0"  align = "center">';
 	echo '<td>Line	</td>';
 	echo '<td>Facebook	</td>';
 	echo '<td>E-mail	</td>';
-
 
     
     echo '</tr>';

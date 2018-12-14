@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Profession</title>
+		<title>Position</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -25,7 +25,7 @@
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>Profession</h2>
+					<h2>Position</h2>
 					
 				</header>
 				
@@ -48,7 +48,7 @@ $numfields = mysqli_num_fields($query);
 ?>  
 
 <?php
-while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
+if($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
 ?>
 
@@ -90,26 +90,29 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
  </table>
 
 </div>
-
 <div align="center">
-  <table  width="200" border="0">
+  <table  width="50" border="0" style="width: 800px">
     <tr>
       <td>
-	  <div align="right"><form id="form7" name="form7" method="post" action="update_c1.php">
+	  <div align="center"><form id="form7" name="form7" method="post" action="update_c1.php">
         <input type="submit" name="submit" id="submit" value="แก้ไข" />
       </form></td>
-	  </div>
+	</div>
 
-      <td><div align="left"><form id="form8" name="form8" method="post" action="home.php">
+      <td> <div align="left"><form id="form8" name="form8" method="post" action="home.php">
         <input type="submit" name="Submit" id="button" value="กลับ" />
       </form></td>
 	  </div>
+
+
     </tr>
   </table>
 </div>
 
+
+
   <?php
-}
+} else {
 
 ?>
   </table>
@@ -120,7 +123,23 @@ mysqli_close($conn);
  </fieldset>
 
 
+  <div align="center">
+  <table  width="50" border="0" style="width: 800px">
+    <tr>
 
+
+      <td>
+	  <div align="center"><form id="form7" name="form7" method="post" action="insert_c1.php">
+        <input type="submit" name="submit" id="submit" value="เพิ่มข้อมูล" />
+      </form></td>
+	</div>
+
+
+    </tr>
+  </table>
+</div>
+  <?php }
+  ?>
 			</section>
 
 		<!-- Footer -->

@@ -24,15 +24,24 @@
 	}
 	else
 	{
-
- 
-		
 		$_SESSION['user_id'] = $row['AP_ID'];
+		$_SESSION['user_lname'] = $row['AP_Lname'];
 		$_SESSION['user_name'] = $row['AP_name'];
+
+		if($row["Status"] == "ADMIN")
+			{
+				header("location:admin_page.php");
+			}
+			else
+			{
+				header("location:home.php");
+			}
+	}	
+		
 
 	
 	//echo  $row["AP_ID"];
-      header("location:home.php");
-	}
+    //   header("location:home.php");
+	// }
 	mysqli_close($objCon);
 ?>

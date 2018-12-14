@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<style type="text/css">
+	h2.a {text-shadow: 0.1em 0.1em 0.05em #33c0ca}
+	</style>
 		<title>Alumni System</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -27,14 +30,16 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<p><h2>WELLCOME TO</h2></p>
-					<h2>Alumni System</h2>
+					<p><h2 class = "a">WELCOME TO</h2></p>
+					<h2 class = "a">Alumni System</h2>
 					<ul class="actions">
-						<li><a href="register.php" class="button big special">Sign Up</a></li>
+						<li><a href="reg_id.php" class="button big special">Sign Up</a></li>
 						<li><a href="login.php" class="button big special">Login</a></li>
 					</ul>
 				</div>
 			</section>
+
+			
 			
 		<!-- Footer -->
 			<?php include "footer.php"; ?>

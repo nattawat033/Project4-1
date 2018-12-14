@@ -56,7 +56,7 @@
 							
 						
 						
-						<a href="register.php" button class="login100-form-btn">
+						<a href="reg_id.php" button class="login100-form-btn">
 							Sign in
 							</button>
 						</a>

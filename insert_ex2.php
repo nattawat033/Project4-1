@@ -11,44 +11,33 @@ session_start();
     $Prof_experience = $_REQUEST["Prof_experience"];
     $Prof_creation = $_REQUEST["Prof_creation"];
     $Prof_other = $_REQUEST["Prof_other"];
-	
+	$ID = $_SESSION['user_id'];
 	//เพิ่มเข้าไปในฐานข้อมูล
-	$sql = 'INSERT INTO joprofessionalb (Prof_quality, Prof_personal, Prof_plan, Prof_language, Prof_computer, Prof_experience, Prof_creation, Prof_other)
-            VALUES("$Prof_quality", "$Prof_personal", "$Prof_plan", "$Prof_language", "$Prof_computer", "$Prof_experience", "$Prof_creation", "$Prof_other") 
-            WHERE AP_ID  = '.$_SESSION['user_id'].'';
+	$sql = "INSERT INTO professional (AP_ID,Prof_quality, Prof_personal, Prof_plan, Prof_language, Prof_computer, Prof_experience, Prof_creation, Prof_other)
+            VALUES('$ID','$Prof_quality', '$Prof_personal', '$Prof_plan', '$Prof_language', '$Prof_computer', '$Prof_experience', '$Prof_creation', '$Prof_other') ";
              
              
 
 	
-	
-	//ปิดการเชื่อมต่อ database
-	
-	//จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
+             $query = mysqli_query($conn, $sql) or die (mysqli_error($conn)); 
+           
     
-        // $sql = "INSERT INTO professional (Prof_quality, Prof_personal, Prof_plan, Prof_language, Prof_computer, Prof_experience, Prof_creation, Prof_other) 
-        // VALUES ('".$_POST["Prof_quality"]."','".$_POST["Prof_personal"]."','".$_POST["Prof_plan"]."',
-        // '".$_POST["Prof_language"]."','".$_POST["Prof_computer"]."','".$_POST["Prof_experience"]."',
-        // '".$_POST["Prof_creation"]."','".$_POST["Prof_other"]."')";
-	mysqli_query($conn, $sql);
-
-
-	// if(mysqli_query($conn, "INSERT INTO job (job_name, job_position, job_address, job_district, job_citty, job_addcode, job_tell, job_fax) 
-    // VALUES('" . $job_name . "','" . $job_position . "','" . $job_address . "', '" .$job_district . "', 
-    //        '" . $job_citty . "', '" .$job_addcode . "', '" . $job_tell . "', '" . $job_fax . "')")){
+             if (!$query) {
+                echo mysqli_error();
+            }
+            else{
+                function phpAlert($msg) {
+                    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+                }
+                
+                
+                 phpAlert(   "บันทึกข้อมูลเรียบร้อยแล้ว"   ); 
+                 echo "<script>window.location='expertise.php'</script>";
+                mysqli_close($conn);
     
-    if($result){
-    echo "<script type='text/javascript'>";
-	echo "alert('บันทึกข้อมูลเรียบร้อย');";
-	echo "location = 'profession.php'; ";
-	echo "</script>";
-	}
-	else{
-	echo "<script type='text/javascript'>";
-    echo "alert('บันทึกข้อมูลล้มเหลว กรุณาลองใหม่อีกครั้ง');";
-    echo "location = 'insert_ex1.php'; ";
-    echo "</script>";
-    
-    
-    mysqli_close($conn);
-}
+            }
+             //echo '<p align="center"><br><br><br>';
+            // echo '<a href="career.php">Back</a>' ;
+            
+           
 ?>

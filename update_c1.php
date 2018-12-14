@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Profession</title>
+		<title>Position</title>
 		<meta http-equiv="content-type" content="text/php; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -25,7 +25,7 @@
 		<!-- Main -->
       <section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>Profession</h2>
+					<h2>Position</h2>
 
 
           <?php
@@ -52,6 +52,7 @@ echo '<table border = "3" cellpading = "0"  align = "center">';
 	echo '<td>รหัสไปรษณี	</td>';
 	echo '<td>เบอร์โทร	</td>';
 	echo '<td>โทรสาร	</td>';
+	echo '<td>	</td>';
 
     
     echo '</tr>';

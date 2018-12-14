@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +33,23 @@
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #999999;">
+
+   <?php
+    
+//     echo $_SESSION['Citizen_ID'];
+//     echo $_SESSION['STD_Fname_Thai'];
+//     echo $_SESSION['STD_Lname_Thai'];
+//     echo $_SESSION['Student_ID'];
+//     echo $_SESSION['Fac_name_Thai'];
+//     echo $_SESSION['Major_name_Thai'];
+
+
+//     ?>
+
 	<form action="insert_AP1.php" method=”post”>
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="login100-more" style="background-image: url('images/1phuket.jpg');"></div>
+			<div class="login100-more" style="background-image: url('images/bg.jpg');"></div>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form class="login100-form validate-form">
@@ -42,8 +58,8 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
-						<span class="label-input100">Full Name</span>
-						<input class="input100" type="text" name="name" placeholder="Name...">
+						<span class="label-input100">Full Name</span><br><br>
+						<?php echo $_SESSION['STD_Fname_Thai'];?> &nbsp <?php echo $_SESSION['STD_Lname_Thai'];?>
 						<span class="focus-input100"></span>
 					</div>
 
@@ -72,8 +88,8 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid IDcard is required: 19xxxxxxxxxxx">
-						<span class="label-input100">ID Card</span>
-						<input class="input100" type="text" name="IdCard" placeholder="19xxxxxxxxxxx">
+						<span class="label-input100">ID Card</span><br><br>
+						<?php echo $_SESSION['Citizen_ID'];?>
 						<span class="focus-input100"></span>
 					</div>
 

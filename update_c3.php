@@ -23,10 +23,7 @@ $sql = " update job set job_name = '$name' ,
 						job_fax = $fax
 								where AP_ID = $pid ";
 
-//$sql = 'update alumni_profile set AP_name = "'.$_POST['pname'].'" where AP_ID = "'. $_POST['pid'].'"';
-//$result = mysqli_query($connect,$sql);
 
-//$sql = 'update alumni_profile set std_ID = "'.$_POST['price'].'" where AP_ID = "'. $_POST['pid'].'"';
 $result = mysqli_query($connect,$sql);
 
 
@@ -35,11 +32,7 @@ if (!$result) {
     echo mysqli_error();
 }
 else{
-  echo '<table border = "1" align = "center" cellpading = "0" cellspacing = "0">';
-   echo '<td align = center>&nbsp;&nbsp;Congratulation! The record is updated.&nbsp;&nbsp;</td>';
-}
- //echo '<p align="center"><br><br><br>';
-// echo '<a href="career.php">Back</a>' ;
+
 
 function phpAlert($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
@@ -48,5 +41,6 @@ function phpAlert($msg) {
 
  phpAlert(   "อัพเดทข้อมูลที่ทำงานเรียบร้อยแล้ว"   ); 
  echo "<script>window.location='profession.php'</script>";
+}
 mysqli_close($connect);
  ?>

@@ -40,19 +40,73 @@ $result = mysqli_query($connect,$sql);
 $row = mysqli_fetch_assoc ($result) ;
 
 echo '<form name = "frmupdate" action= "update_ex3.php" method = "post">';
-echo '<center>PID :		<input type="text" value="'.$row['AP_ID'].'" disabled = "false"><br></center>';
 
-echo '<input type="hidden" name = "pid" value = "'.$row['AP_ID'].'">';
+?>
+<!-- // echo '<center>PID :		<input type="text" value="'.$row['AP_ID'].'" disabled = "false"><br></center>';
 
-echo '<center>ด้านระบบคุณภาพ :						<input type="text" name="quality" 			value="'.$row['Prof_quality'].'"><br></center>';
-echo '<center>ด้านบุคลิกภาพ/มารยาททางสังคม :			<input type="text" name="personal" 			value="'.$row['Prof_personal'].'"><br></center>';
-echo '<center>ด้านการวางแผน :						<input type="text" name="plan" 		value="'.$row['Prof_plan'].'"><br></center>';
-echo '<center>ด้านภาษา :							<input type="text" name="language" 			value="'.$row['Prof_language'].'"><br></center>';
-echo '<center>ด้านคอมพิวเตอร์ :						<input type="text" name="computer" 	value="'.$row['Prof_computer'].'"><br></center>';
-echo '<center>ด้านทักษะวิชาชีพ/ประสบการณ์การทำงาน :		<input type="text" name="experience" 		value="'.$row['Prof_experience'].'"><br></center>';
-echo '<center>ด้านสันทนาการ :						<input type="text" name="creation" 		value="'.$row['Prof_creation'].'"><br></center>';
-echo '<center>ด้านอื่นๆ :							<input type="text" name="other" 		value="'.$row['Prof_other'].'"><br></center>';
-echo '<center><input type = "submit" value = "update"></center>';	
+// echo '<input type="hidden" name = "pid" value = "'.$row['AP_ID'].'">';
+
+// echo '<center>ด้านระบบคุณภาพ :						<input type="text" name="quality" 			value="'.$row['Prof_quality'].'"><br></center>';
+// echo '<center>ด้านบุคลิกภาพ/มารยาททางสังคม :			<input type="text" name="personal" 			value="'.$row['Prof_personal'].'"><br></center>';
+// echo '<center>ด้านการวางแผน :						<input type="text" name="plan" 		value="'.$row['Prof_plan'].'"><br></center>';
+// echo '<center>ด้านภาษา :							<input type="text" name="language" 			value="'.$row['Prof_language'].'"><br></center>';
+// echo '<center>ด้านคอมพิวเตอร์ :						<input type="text" name="computer" 	value="'.$row['Prof_computer'].'"><br></center>';
+// echo '<center>ด้านทักษะวิชาชีพ/ประสบการณ์การทำงาน :		<input type="text" name="experience" 		value="'.$row['Prof_experience'].'"><br></center>';
+// echo '<center>ด้านสันทนาการ :						<input type="text" name="creation" 		value="'.$row['Prof_creation'].'"><br></center>';
+// echo '<center>ด้านอื่นๆ :							<input type="text" name="other" 		value="'.$row['Prof_other'].'"><br></center>';
+// echo '<center><input type = "submit" value = "update"></center>';	 -->
+
+
+<div align="center">
+<table width="500" border="0" style="width: 800px">
+<tr>
+   <tr width="80">
+     <th> <div align="center">NO. : </div></th>
+   <td><div align="left">	<input type="text" value= <?php echo $row["AP_ID"] ?> disabled = "false">
+   							<input type="hidden" name = "pid" value = <?php echo $row["AP_ID"] ?>></div></td></tr>
+
+ <tr>
+   <tr width="80">
+     <th> <div align="center">ด้านระบบคุณภาพ : </div></th>
+   <td><div align="left">	<input type="text" name="quality" value= <?php echo $row["Prof_quality"] ?>></div></td></tr>
+ 
+ <tr width="80">
+     <th> <div align="center">ด้านบุคลิกภาพ/มารยาททางสังคม :</div></th>
+   <td><div align="left">   <input type="text" name="personal" value= <?php echo $row["Prof_personal"] ?>> </div></td></tr>
+ 
+ <tr width="80">
+     <th> <div align="center">ด้านการวางแผน :</div></th>
+   <td><div align="left">   <input type="text" name="plan" value= <?php echo $row["Prof_plan"] ?>></div></td></tr>
+ 
+ <tr width="80">
+     <th> <div align="center">ด้านภาษา	 :</div></th>
+   <td><div align="left">    <input type="text" name="language" value= <?php echo $row["Prof_language"] ?>></div></td></tr>
+   
+   <tr width="80">
+     <th><div align="center">ด้านคอมพิวเตอร์ :</div></th>
+   <td><div align="left">	<input type="text" name="computer" value= <?php echo $row["Prof_computer"] ?>></div></td></tr>
+   
+   <tr width="80">
+     <th><div align="center">ด้านทักษะวิชาชีพ/ประสบการณ์การทำงาน :</div></th>
+   <td><div align="left">	<input type="text" name="experience" value= <?php echo $row["Prof_experience"] ?>></div></td></tr>
+   
+   <tr width="80">
+     <th><div align="center">ด้านสันทนาการ :</div></th>
+   <td><div align="left">	<input type="text" name="creation" value= <?php echo $row["Prof_creation"] ?>></div></td></tr>
+   
+   <tr width="80">
+     <th><div align="center">ด้านอื่นๆ	:</div></th>
+   <td><div align="left">	<input type="text" name="other" value= <?php echo $row["Prof_other"] ?>></div></td></tr>
+
+
+
+   
+ </table>
+ <input type = "submit" value = "update">
+
+</div>
+
+<?php
 echo '</form>';
 mysqli_close($connect);
  ?>
